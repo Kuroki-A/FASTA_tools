@@ -2,7 +2,7 @@
 
 list_120 = []
 
-with open ('File_name.fasta') as f:
+with open ('File_name.fasta') as f: ### 入力File
      all_list = [l.rstrip() for l in f.readlines()]
      for i in range(len(all_list)):
          if i % 2 == 0:
@@ -17,6 +17,6 @@ with open ('File_name.fasta') as f:
                         list_120.append(all_list[i-1]+ '_' + str(j))
                         list_120.append(all_list[i][60*j:(120+60*j)])
 
-with open ('File_name_cut.fasta', 'w') as g:
+with open ('File_name_cut.fasta', 'w') as g:   ### 出力File
     for i in list_120:
         print(i, file=g)
